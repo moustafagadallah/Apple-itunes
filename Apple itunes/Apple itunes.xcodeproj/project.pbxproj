@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6F30B60023358CBA00AC0F09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B5FF23358CBA00AC0F09 /* AppDelegate.swift */; };
-		6F30B60223358CBA00AC0F09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B60123358CBA00AC0F09 /* ViewController.swift */; };
 		6F30B60523358CBA00AC0F09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F30B60323358CBA00AC0F09 /* Main.storyboard */; };
 		6F30B60723358CBC00AC0F09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F30B60623358CBC00AC0F09 /* Assets.xcassets */; };
 		6F30B60A23358CBC00AC0F09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F30B60823358CBC00AC0F09 /* LaunchScreen.storyboard */; };
 		6F30B61523359C0D00AC0F09 /* PodCastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B61423359C0D00AC0F09 /* PodCastController.swift */; };
-		6F30B6172335A0DD00AC0F09 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B6162335A0DD00AC0F09 /* Podcast.swift */; };
+		6F30B6172335A0DD00AC0F09 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B6162335A0DD00AC0F09 /* Models.swift */; };
+		6F30B61A233606F900AC0F09 /* APIservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B619233606F900AC0F09 /* APIservices.swift */; };
+		6F30B61D23360DA900AC0F09 /* UIviewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B61C23360DA900AC0F09 /* UIviewExt.swift */; };
+		6F30B61F23360DF200AC0F09 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F30B61E23360DF200AC0F09 /* ProductCell.swift */; };
 		A325544E5183D0AE70AFAA0E /* Pods_Apple_itunes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6CD2C0F104A36A2626A5D5 /* Pods_Apple_itunes.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,13 +25,15 @@
 		52980F6DE29E3FD1C40796C0 /* Pods-Apple itunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple itunes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apple itunes/Pods-Apple itunes.debug.xcconfig"; sourceTree = "<group>"; };
 		6F30B5FC23358CBA00AC0F09 /* Apple itunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple itunes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30B5FF23358CBA00AC0F09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F30B60123358CBA00AC0F09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F30B60423358CBA00AC0F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F30B60623358CBC00AC0F09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F30B60923358CBC00AC0F09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F30B60B23358CBC00AC0F09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F30B61423359C0D00AC0F09 /* PodCastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodCastController.swift; sourceTree = "<group>"; };
-		6F30B6162335A0DD00AC0F09 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		6F30B6162335A0DD00AC0F09 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6F30B619233606F900AC0F09 /* APIservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIservices.swift; sourceTree = "<group>"; };
+		6F30B61C23360DA900AC0F09 /* UIviewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIviewExt.swift; sourceTree = "<group>"; };
+		6F30B61E23360DF200AC0F09 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		6F30B5FE23358CBA00AC0F09 /* Apple itunes */ = {
 			isa = PBXGroup;
 			children = (
+				6F30B61B23360D7200AC0F09 /* Extensions */,
+				6F30B618233606DF00AC0F09 /* ApI */,
 				6F30B61123359B8100AC0F09 /* Model */,
 				6F30B61223359B9C00AC0F09 /* View */,
 				6F30B61323359BAB00AC0F09 /* Controller */,
@@ -88,7 +94,7 @@
 		6F30B61123359B8100AC0F09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6F30B6162335A0DD00AC0F09 /* Podcast.swift */,
+				6F30B6162335A0DD00AC0F09 /* Models.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +102,7 @@
 		6F30B61223359B9C00AC0F09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F30B61E23360DF200AC0F09 /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,10 +110,25 @@
 		6F30B61323359BAB00AC0F09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6F30B60123358CBA00AC0F09 /* ViewController.swift */,
 				6F30B61423359C0D00AC0F09 /* PodCastController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		6F30B618233606DF00AC0F09 /* ApI */ = {
+			isa = PBXGroup;
+			children = (
+				6F30B619233606F900AC0F09 /* APIservices.swift */,
+			);
+			path = ApI;
+			sourceTree = "<group>";
+		};
+		6F30B61B23360D7200AC0F09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6F30B61C23360DA900AC0F09 /* UIviewExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		743FE38A50C5BE8E5E2EBAD4 /* Pods */ = {
@@ -234,9 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F30B60223358CBA00AC0F09 /* ViewController.swift in Sources */,
 				6F30B61523359C0D00AC0F09 /* PodCastController.swift in Sources */,
-				6F30B6172335A0DD00AC0F09 /* Podcast.swift in Sources */,
+				6F30B6172335A0DD00AC0F09 /* Models.swift in Sources */,
+				6F30B61A233606F900AC0F09 /* APIservices.swift in Sources */,
+				6F30B61F23360DF200AC0F09 /* ProductCell.swift in Sources */,
+				6F30B61D23360DA900AC0F09 /* UIviewExt.swift in Sources */,
 				6F30B60023358CBA00AC0F09 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
