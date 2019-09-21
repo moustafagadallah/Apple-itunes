@@ -8,12 +8,14 @@
 
 import UIKit
 import SDWebImage
+
+
 class EpisodeCell : UITableViewCell {
     
     var podCast : Result!{
         didSet{
              nameLabel.text = podCast.name
-            mediaTypeLabel.text = podCast.artistName
+            artistnameLabel.text = podCast.artistName
             guard let url = URL(string: podCast.artworkUrl100 ) else {return}
             artistImage.sd_setImage(with: url, completed: nil)
          
@@ -21,20 +23,31 @@ class EpisodeCell : UITableViewCell {
     }
     private let nameLabel : UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 3
+        lbl.numberOfLines = 0
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
         lbl.textAlignment = .left
         return lbl
     }()
    
-    private let mediaTypeLabel : UILabel = {
+    private let artistnameLabel : UILabel = {
         let lbl = UILabel()
         lbl.textColor = UIColor.darkGray
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         return lbl
+    }()
+    
+    
+    var mediaTypeLbl : UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.textAlignment = .left
+        label.text = "Apple Music"
+        label.textColor = UIColor.darkGray
+        return label
+        
     }()
     
     private let artistImage : UIImageView = {
@@ -50,13 +63,19 @@ class EpisodeCell : UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
          super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(nameLabel)
-        self.addSubview(mediaTypeLabel)
+        self.addSubview(artistnameLabel)
         self.addSubview(artistImage)
          artistImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 90, height: 0, enableInsets: false)
         
          nameLabel.anchor(top: topAnchor, left: artistImage.rightAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
         
-         mediaTypeLabel.anchor(top: nameLabel.bottomAnchor, left: artistImage.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
+         artistnameLabel.anchor(top: nameLabel.bottomAnchor, left: artistImage.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
+        let stackView = UIStackView(arrangedSubviews: [mediaTypeLbl])
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.spacing = 5
+        addSubview(stackView)
+        stackView.anchor(top: topAnchor, left: nameLabel.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 15, paddingLeft: 5, paddingBottom: 15, paddingRight: 10, width: 0, height: 70, enableInsets: false)
         
         
     }
