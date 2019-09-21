@@ -40,7 +40,7 @@ class APIService {
 
                 }catch let decodeErr{
                    
-                   print("Failde to parse", decodeErr)
+                   print("Failed to parse", decodeErr)
                 
             }
         }
