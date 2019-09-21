@@ -12,10 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+  
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       setupNavigationController()
         return true
     }
 
@@ -41,6 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    fileprivate func setupNavigationController(){
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let nav1 = UINavigationController()
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ]
+        let mainView = PodCastsController()//ViewController = Name of your controller
+        nav1.viewControllers = [mainView]
+        self.window!.rootViewController = nav1
+        self.window?.makeKeyAndVisible()
+        
+    }
+    
 }
 
