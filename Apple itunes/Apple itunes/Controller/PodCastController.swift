@@ -13,16 +13,14 @@ class PodCastsController : UITableViewController {
     
       let cellId = "cellId"
     var podCasts = [Result]()
-  
-    let url = "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/explicit.json"
    
     override func viewDidLoad() {
          super.viewDidLoad()
-         setTitletTOnavigationController()
+        setTitletTOnavigationController()
         setupTableView()
         APIService.shared.getdataFromAPi { (podcasts) in
-            self.podCasts = podcasts
-            self.tableView.reloadData()
+        self.podCasts = podcasts
+        self.tableView.reloadData()
         }
    
     }
@@ -48,18 +46,17 @@ class PodCastsController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? EpisodeCell else {return UITableViewCell()}
+        
         let podCast = podCasts[indexPath.row]
-          cell.podCast = podCast
-//        cell.textLabel?.text = "\(podCast.name)\n\(podCast.artistName)"
-//        cell.textLabel?.numberOfLines = 0
-        //cell.imageView?.image = #imageLiteral(resourceName: "Simulator Screen Shot - iPhone Xʀ - 2019-09-19 at 14.12.11")
+        cell.podCast = podCast
         return cell
     }
     
     
   
-    //MARK:- NAVIGATION BAR WORK
+    //MARK:- NAVIGATIONBAR WORK
     fileprivate  func setTitletTOnavigationController(){
+        
         let longTitleLabel = UILabel()
         longTitleLabel.text = "Coming Soon"
         longTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
