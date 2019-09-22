@@ -23,7 +23,6 @@ class EpisodeCell : UITableViewCell {
     }
     private let nameLabel : UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 0
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
         lbl.textAlignment = .left
@@ -35,7 +34,6 @@ class EpisodeCell : UITableViewCell {
         lbl.textColor = UIColor.darkGray
         lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.textAlignment = .left
-        lbl.numberOfLines = 0
         return lbl
     }()
     
